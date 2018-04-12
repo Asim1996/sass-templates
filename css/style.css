@@ -651,7 +651,8 @@ body {
       left: 50%;
       transform: translate(-50%, -50%);
       height: 60rem;
-      display: block; }
+      display: block;
+      overflow: auto; }
     .popup__left {
       display: block;
       width: 100%; }
@@ -664,7 +665,7 @@ body {
       float: left;
       height: 20rem; }
     .popup__text {
-      font-size: 1.2rem;
+      font-size: 1rem;
       margin-bottom: 2rem;
       display: block;
       column-count: 1; } }

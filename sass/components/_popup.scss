@@ -84,6 +84,7 @@
 	@include absCenter;	
 	height: 60rem;
 	display: block;
+	overflow: auto;
 	}
 	&__left{
 		display:block;
@@ -101,7 +102,7 @@
 	}
 
 	&__text{
-		font-size: 1.2rem;
+		font-size: 1rem;
 		margin-bottom: 2rem;
 		display: block;
 		column-count:1;
