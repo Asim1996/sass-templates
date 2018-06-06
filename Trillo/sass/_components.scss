@@ -107,12 +107,22 @@
 	font-size: 1.4rem;
 	margin-top: 3.5rem;
 	list-style: none;
+	@media only screen and(max-width:$bp-medium) {
+		display: flex;
+		margin:0;
+	}
 	&__item{
 		position: relative;
 		&:not(:last-child){
 			margin-bottom: .5rem;
+			@media only screen and(max-width:$bp-medium) {
+	 		margin: 0;
+			}
 		}
+	@media only screen and(max-width:$bp-medium) {
+	 flex:1;
 	}
+}
 
 	&__item::before{
 		content: '';
@@ -149,6 +159,11 @@
 		align-item:center;
 		position: relative;
 		z-index: 1000;
+	@media only screen and(max-width:$bp-medium) {
+	 	justify-content:center;
+	 	padding: 2rem;
+		
+	}
 
 	}
 	&__icon{
@@ -163,6 +178,9 @@
 	color:var(--color-grey-light-4);
 	text-align: center;
 	padding: 2.5rem;
+	@media only screen and(max-width:$bp-medium) {
+		display: none;
+	}
 
 }
 
@@ -320,6 +338,9 @@
 	&__count{
 	margin-right: auto;
 	}
+	&__friends{
+		display: flex;
+	}
 	&__photo {
 		box-sizing:content-box;
 		height: 4rem;
@@ -327,7 +348,7 @@
 		border-radius: 50%;
 		border:3px solid #fff;
 		&:not(:last-child){
-			margin-right: -1.5rem;
+			margin-right: -2rem;
 		}
 	}	
 }
@@ -344,6 +365,10 @@
 	margin-bottom: 3.5rem;
 	position: relative;
 	overflow: hidden;
+	@media only screen and(max-width:$bp-medium) {
+	padding: 2rem;
+	margin-bottom: 3rem;	
+	}
 	&__text{
 	margin-bottom: 2rem;
 	position: relative;
@@ -393,4 +418,63 @@
 
 
 	}
+}
+
+// Call to Action
+.cta{
+	padding: 3.5rem 0;
+	text-align: center;
+	@media only screen and(max-width:$bp-medium) {
+		padding: 2.5rem 0;
+	}
+
+	&__book-now{
+	font-weight: 300;
+	font-size: 2rem;
+	text-transform: uppercase;	
+	}
+	
+}
+
+.btn{
+	font-size: 1.5rem;
+	font-weight: 300;
+	text-transform: uppercase;
+	border-radius: 100px;
+	border: none;
+	background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+	color: #fff;
+	position: relative;
+	overflow: hidden;
+	pointer:cursor;
+	& > * {
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+		transition:all 0.2s;
+
+	}
+	&__visible{
+		padding: 2rem 7.5rem;
+	}
+	&__invisible{
+		padding: 2rem 0;
+		position: absolute;
+		left: 0;
+		top: -100%;
+	}
+	&:hover{
+	background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+		
+	}
+	&:hover &__visible{
+		transform:translateY(100%);
+		}	
+	&:hover &__invisible{
+			top:0;
+		}
+	&:focus{
+		outline: none;
+		animation:pulsate 1s infinite;
+	}	
 }
